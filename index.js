@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Lightspeed will call this endpoint
-app.post('/oauthcallback', (req, res) => {
+app.get('/oauthcallback', (req, res) => {
 	axios
 		.post('https://cloud.merchantos.com/oauth/access_token.php', {
 			client_id: process.env.LIGHTSPEED_CLIENT_ID,
